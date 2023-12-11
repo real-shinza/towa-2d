@@ -45,5 +45,10 @@ namespace Player
             lines.font = font;
             lines.enabled = true;
         }
+
+        public bool GetIsPlaying()
+        {
+            return audioSource.isPlaying;
+        }
     }
 }

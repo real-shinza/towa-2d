@@ -18,13 +18,10 @@ namespace Enemy
         [SerializeField]
         private GameObject explosionPrefab;
         [SerializeField]
-        private CapsuleCollider2D capsuleCollider;
-        [SerializeField]
-        private CircleCollider2D circleCollider;
-        [SerializeField]
         private float moveSpeed;
 
         private float moveVec;
+        private bool isFinish;
         private EnemyState beforeState;
         private bool firstStateTime;
 
@@ -40,11 +37,28 @@ namespace Enemy
             MovementUpdate();
         }
 
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.tag == "Block")
+            {
+                moveVec = 0f;
+            }
+        }
+
 
 
         private void MovementUpdate()
         {
             Ground();
+
+            // もしゲーム終了していたら何もしない
+            if (isFinish)
+            {
+                enemyAnimation.SetIsMove(false);
+                enemyAnimation.SetIsAttack(false);
+                enemyAnimation.SetIsStrike(false);
+                return;
+            }
 
             // もしStateが変わっていたら
             if (beforeState != enemyController.GetState())
@@ -130,8 +144,6 @@ namespace Enemy
             SetDirection(enemyController.GetDirection());
             enemyAnimation.SetIsStrike(true);
             gameObject.tag = "StrikingEnemy";
-            capsuleCollider.enabled = false;
-            circleCollider.enabled = true;
         }
 
         private void Die()
@@ -168,11 +180,11 @@ namespace Enemy
             Instantiate(explosionPrefab, transform.position + new Vector3(0.0f, -0.3f, 0.0f), Quaternion.identity);
         }
 
-        private void FinishStrike()
-        {
-            capsuleCollider.enabled = true;
-            circleCollider.enabled = false;
-        }
 
+
+        public void GetIsFinish(bool isFinish)
+        {
+            this.isFinish = isFinish;
+        }
     }
 }

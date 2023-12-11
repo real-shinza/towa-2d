@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using Effect;
 using UnityEngine;
 
 namespace Player
@@ -18,22 +16,67 @@ namespace Player
         [SerializeField]
         private ContactFilter2D filter2d;
         [SerializeField]
-        private float moveSpeed, strikeSpeed, jumpForce;
+        private GameObject explosionPrefab;
+        [SerializeField]
+        private GameManager gameManager;
+        [SerializeField]
+        private PlayerHpManager playerHpManager;
+        [SerializeField]
+        private float moveSpeed, strikeSpeed, jumpForce, maxHp;
+        [SerializeField]
+        private float enemyDamage, attackDamage, straikeDamage;
 
-        private float moveVec;
-        private bool isGround, canJump;
+        private float moveVec, hp;
+        private bool isGround, canJump, isFinish;
         private PlayerState state;
 
 
 
-        void Start()
+        public PlayerState State { get { return state; } set { state = value; } }
+
+
+
+        private void Start()
         {
+            hp = maxHp;
+            playerHpManager.SetGage(hp, maxHp);
             playerAudio.PlayVoice("Start");
         }
 
-        void Update()
+        private void Update()
         {
             MovementUpdate();
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            var otherObj = other.gameObject;
+
+            if (otherObj.tag == "Iblast")
+            {
+                otherObj.GetComponent<IblastManager>().DestroyTrigger();
+                state = PlayerState.HURT;
+                hp -= attackDamage;
+                playerHpManager.SetGage(hp, maxHp);
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            var otherObj = other.gameObject;
+
+            if (other.gameObject.tag == "Enemy")
+            {
+                state = PlayerState.HURT;
+                hp -= enemyDamage;
+                playerHpManager.SetGage(hp, maxHp);
+            }
+            else if (otherObj.tag == "StrikingEnemy")
+            {
+                state = PlayerState.HURT;
+                hp -= straikeDamage;
+                playerHpManager.SetGage(hp, maxHp);
+            }
         }
 
 
@@ -42,15 +85,20 @@ namespace Player
         {
             moveVec = new float();
 
-            Ground();
-            Jump();
-            Move();
-            Attack();
-            JumpAttack();
-            Strike();
-            Block();
-            Crouch();
-            Hurt();
+            if (!(state == PlayerState.WIN || state == PlayerState.DIE))
+            {
+                Ground();
+                Jump();
+                Move();
+                Attack();
+                JumpAttack();
+                Strike();
+                Block();
+                Crouch();
+                Hurt();
+            }
+
+            Die();
 
             // 実際の移動処理
             transform.Translate(moveVec * Time.deltaTime * moveSpeed, 0.0f, 0.0f);
@@ -77,9 +125,7 @@ namespace Player
             if (canJump && playerController.GetInputJump() && isGround && state != PlayerState.ATTACK)
             {
                 canJump = false;
-
                 rigidbody2d.AddForce(transform.up * jumpForce);
-
                 playerAudio.PlayVoice("Jump");
             }
         }
@@ -194,6 +240,30 @@ namespace Player
             }
         }
 
+        private void Die()
+        {
+            if (transform.position.y < -5.5f && state != PlayerState.DIE)
+            {
+                hp = 0f;
+                playerHpManager.SetGage(hp, maxHp);
+            }
+
+            if (hp <= 0.0f && state != PlayerState.DIE)
+            {
+                playerAudio.PlayVoice("Die");
+                SetState(true, PlayerState.DIE);
+                playerAnimation.DieTrigger();
+                playerAnimation.Speed(0.0f);
+                gameManager.FinishGame();
+            }
+            else if (state == PlayerState.DIE && !playerAudio.GetIsPlaying() && !isFinish)
+            {
+                isFinish = true;
+                gameManager.ActiveResult();
+                playerAnimation.Speed(1.0f);
+            }
+        }
+
         private float RoundOffValue(float value)
         {
             if (value > 0.2f)
@@ -259,5 +329,18 @@ namespace Player
             else if (!isState && this.state == state)
                 this.state = PlayerState.NONE;
         }
+
+        private void DestroyObject()
+        {
+            Destroy(gameObject);
+            Instantiate(explosionPrefab, transform.position + new Vector3(0.0f, -0.3f, 0.0f), Quaternion.identity);
+        }
+
+
+
+        private void SetOffAttack() { SetAttack(false); }
+        private void SetOffStrike() { SetStrike(false); }
+        private void SetOffBlock() { SetBlock(false); }
+        private void SetOffHurt() { SetHurt(false); }
     }
 }

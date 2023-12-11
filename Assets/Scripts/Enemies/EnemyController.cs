@@ -140,5 +140,11 @@ namespace Enemy
 
             return moveDir;
         }
+
+        public void DestroyTrigger()
+        {
+            gameObject.tag = "Untagged";
+            isDie = true;
+        }
     }
 }
