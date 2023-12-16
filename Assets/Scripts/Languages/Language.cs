@@ -15,6 +15,11 @@ namespace LanguageData
 
         public LanguageType LanguageType { get { return languageType; } set { languageType = value; } }
         public Font GetFont() { return languageInfo[(int)languageType].font; }
+        public string GetName(int languageType1, int languageType2)
+        {
+            return languageInfo[languageType1].names[languageType2];
+        }
+        public int GetLength() { return languageInfo.Length; }
 
 
 

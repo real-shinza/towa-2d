@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afbb9b2c8d13b741b19e5f00a80568b, type: 3}
   m_Name: Language
   m_EditorClassIdentifier: 
-  languageType: 0
+  languageType: 5
   languageInfo:
   - font: {fileID: 12800000, guid: 5a4948d40e4c562448d9bc945951d2ac, type: 3}
     names:
@@ -32,16 +32,16 @@ MonoBehaviour:
     - Indonesian
   - font: {fileID: 12800000, guid: bb9870041abcdda4583eb57635b9fa97, type: 3}
     names:
-    - "\u82F1\u8BED"
     - "\u65E5\u8BED"
+    - "\u82F1\u8BED"
     - "\u7B80\u4F53\u4E2D\u6587"
     - "\u7E41\u4F53\u4E2D\u6587"
     - "\u97E9\u8BED"
     - "\u5370\u5EA6\u5C3C\u897F\u4E9A\u8BED"
   - font: {fileID: 12800000, guid: 2d44cb6b3fdd76d41bff4fad16708f80, type: 3}
     names:
-    - "\u82F1\u6587"
     - "\u65E5\u6587"
+    - "\u82F1\u6587"
     - "\u7C21\u9AD4\u4E2D\u6587"
     - "\u7E41\u9AD4\u4E2D\u6587"
     - "\u97D3\u6587"
@@ -61,4 +61,4 @@ MonoBehaviour:
     - Cina Disederhanakan
     - Cina Tradisional
     - 'Bahasa Korea '
-    - Indonesian
+    - Bahasa Indonesia
