@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afbb9b2c8d13b741b19e5f00a80568b, type: 3}
   m_Name: Language
   m_EditorClassIdentifier: 
-  languageType: 5
+  languageType: 0
   languageInfo:
   - font: {fileID: 12800000, guid: 5a4948d40e4c562448d9bc945951d2ac, type: 3}
     names:

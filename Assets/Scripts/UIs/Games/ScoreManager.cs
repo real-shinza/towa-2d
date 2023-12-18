@@ -1,48 +1,56 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
+namespace Game
 {
-    [SerializeField]
-    private int totalScore;
-    [SerializeField]
-    private Text scoreText;
-    [SerializeField]
-    private int blockIblastScore;
-    [SerializeField]
-    private int blockStrikingEnemyScore;
-    [SerializeField]
-    private int killEnemyScore;
-
-
-    private void AddScore(int score)
+    public class ScoreManager : MonoBehaviour
     {
-        totalScore += score;
-        UpdateScoreText();
-    }
+        [SerializeField]
+        private int totalScore;
+        [SerializeField]
+        private Text scoreText;
+        [SerializeField]
+        private int blockIblastScore;
+        [SerializeField]
+        private int blockStrikingEnemyScore;
+        [SerializeField]
+        private int killEnemyScore;
 
-    private void UpdateScoreText()
-    {
-        scoreText.text = $"{totalScore:D8}";
-    }
+
+
+        public int TotalScore { get { return totalScore; } }
 
 
 
-    public void BlockIblast()
-    {
-        AddScore(blockIblastScore);
-        UpdateScoreText();
-    }
+        private void AddScore(int score)
+        {
+            totalScore += score;
+            UpdateScoreText();
+        }
 
-    public void BlockStrikingEnemy()
-    {
-        AddScore(blockStrikingEnemyScore);
-        UpdateScoreText();
-    }
+        private void UpdateScoreText()
+        {
+            scoreText.text = $"{totalScore:D8}";
+        }
 
-    public void KillEnemy()
-    {
-        AddScore(killEnemyScore);
-        UpdateScoreText();
+
+
+        public void BlockIblast()
+        {
+            AddScore(blockIblastScore);
+            UpdateScoreText();
+        }
+
+        public void BlockStrikingEnemy()
+        {
+            AddScore(blockStrikingEnemyScore);
+            UpdateScoreText();
+        }
+
+        public void KillEnemy()
+        {
+            AddScore(killEnemyScore);
+            UpdateScoreText();
+        }
     }
 }

@@ -1,45 +1,48 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHpManager : MonoBehaviour
+namespace Game
 {
-    [SerializeField]
-    private Image image;
-    [SerializeField]
-    private float gageSpeed;
-    private float gage, gageMemory;
-
-
-
-    private void Update()
+    public class PlayerHpManager : MonoBehaviour
     {
-        UpdateGage();
-    }
+        [SerializeField]
+        private Image image;
+        [SerializeField]
+        private float gageSpeed;
+        private float gage, gageMemory;
 
 
 
-    private void UpdateGage()
-    {
-        if (gage > gageMemory)
+        private void Update()
         {
-            gage -= gageSpeed * Time.deltaTime;
-
-            if (gage <= gageMemory)
-                gage = gageMemory;
-        }
-        else if (gage < gageMemory)
-        {
-            gage += gageSpeed * Time.deltaTime;
-
-            if (gage >= gageMemory)
-                gage = gageMemory;
+            UpdateGage();
         }
 
-        image.fillAmount = gage;
-    }
 
-    public void SetGage(float hp, float maxHp)
-    {
-        gageMemory = hp / maxHp;
+
+        private void UpdateGage()
+        {
+            if (gage > gageMemory)
+            {
+                gage -= gageSpeed * Time.deltaTime;
+
+                if (gage <= gageMemory)
+                    gage = gageMemory;
+            }
+            else if (gage < gageMemory)
+            {
+                gage += gageSpeed * Time.deltaTime;
+
+                if (gage >= gageMemory)
+                    gage = gageMemory;
+            }
+
+            image.fillAmount = gage;
+        }
+
+        public void SetGage(float hp, float maxHp)
+        {
+            gageMemory = hp / maxHp;
+        }
     }
 }
