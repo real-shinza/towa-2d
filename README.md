@@ -43,4 +43,6 @@ Unity 2022.3.14f1
 [Knight Sprite Sheet (Free)](https://assetstore.unity.com/packages/2d/characters/knight-sprite-sheet-free-93897)  
 [Dragon Warrior (Free)](https://assetstore.unity.com/packages/2d/characters/dragon-warrior-free-93896)  
 [Pixel Art Platformer - Village Props](https://assetstore.unity.com/packages/2d/environments/pixel-art-platformer-village-props-166114)  
-[Sleek essential UI pack](https://assetstore.unity.com/packages/2d/gui/icons/sleek-essential-ui-pack-170650)
+[Sleek essential UI pack](https://assetstore.unity.com/packages/2d/gui/icons/sleek-essential-ui-pack-170650)  
+[Dark Theme UI](https://assetstore.unity.com/packages/2d/gui/dark-theme-ui-199010)  
+[Casual Game BGM #5](https://assetstore.unity.com/packages/audio/music/casual-game-bgm-5-135943)  

@@ -6,13 +6,19 @@ namespace Title
     public class TitleManager : MonoBehaviour
     {
         [SerializeField]
-        private LanguageDropdown languageDropdown;
+        private Settings settings;
         [SerializeField]
         private Loge loge;
         [SerializeField]
         private TitleButton titleButton;
         [SerializeField]
         private Text version;
+        [SerializeField]
+        private Slider musicSlider;
+        [SerializeField]
+        private Slider voiceSlider;
+        [SerializeField]
+        private AudioSetting audioSetting;
 
 
 
@@ -20,6 +26,8 @@ namespace Title
         {
             InitTitleUi();
             InitVersion();
+            musicSlider.value = audioSetting.Music;
+            voiceSlider.value = audioSetting.Voice;
         }
 
 
@@ -31,7 +39,7 @@ namespace Title
 
         private void InitTitleUi()
         {
-            languageDropdown.InitLanguageDropdown();
+            settings.ChangedLanguange();
             loge.InitLogo();
             titleButton.InitButton();
         }

@@ -21,6 +21,20 @@ public class GameManager : MonoBehaviour
     private Text scoreText;
     [SerializeField]
     private Text timeText;
+    [SerializeField]
+    private AudioSource musicAudioSource;
+    [SerializeField]
+    private AudioSource voiceAudioSource;
+    [SerializeField]
+    private AudioSetting audioSetting;
+
+
+
+    public void Awake()
+    {
+        musicAudioSource.volume = audioSetting.Music / 2;
+        voiceAudioSource.volume = audioSetting.Voice / 2;
+    }
 
 
 

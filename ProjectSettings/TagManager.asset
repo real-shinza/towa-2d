@@ -47,3 +47,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tilemap
+    uniqueID: 1668536839
+    locked: 0
+  - name: Emery
+    uniqueID: 3601496423
+    locked: 0
+  - name: Player
+    uniqueID: 2024037949
+    locked: 0

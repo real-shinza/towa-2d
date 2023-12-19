@@ -10,19 +10,19 @@ namespace Title
         [SerializeField]
         private string[] playNames;
         [SerializeField]
-        private string[] controlNames;
+        private string[] settingsNames;
         [SerializeField]
         private string[] creditsNames;
         [SerializeField]
         private Text playButtonText;
         [SerializeField]
-        private Text controlButtonText;
+        private Text settingsButtonText;
         [SerializeField]
         private Text creditsButtonText;
         [SerializeField]
         private GameObject filter;
         [SerializeField]
-        private GameObject controlObject;
+        private GameObject settingsObject;
         [SerializeField]
         private GameObject creditsObject;
         [SerializeField]
@@ -34,8 +34,8 @@ namespace Title
         {
             playButtonText.text = playNames[(int)language.LanguageType];
             playButtonText.font = language.GetFont();
-            controlButtonText.text = controlNames[(int)language.LanguageType];
-            controlButtonText.font = language.GetFont();
+            settingsButtonText.text = settingsNames[(int)language.LanguageType];
+            settingsButtonText.font = language.GetFont();
             creditsButtonText.text = creditsNames[(int)language.LanguageType];
             creditsButtonText.font = language.GetFont();
         }
@@ -45,10 +45,10 @@ namespace Title
             SceneManager.LoadScene(1);
         }
 
-        public void OnControl()
+        public void OnSettings()
         {
             filter.SetActive(true);
-            controlObject.SetActive(true);
+            settingsObject.SetActive(true);
         }
 
         public void OnCredits()
@@ -60,7 +60,7 @@ namespace Title
         public void OnFilter()
         {
             filter.SetActive(false);
-            controlObject.SetActive(false);
+            settingsObject.SetActive(false);
             creditsObject.SetActive(false);
         }
     }
