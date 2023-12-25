@@ -18,6 +18,8 @@ namespace Title
         [SerializeField]
         private Slider voiceSlider;
         [SerializeField]
+        private AudioSource audioSource;
+        [SerializeField]
         private AudioSetting audioSetting;
 
 
@@ -28,6 +30,7 @@ namespace Title
             InitVersion();
             musicSlider.value = audioSetting.Music;
             voiceSlider.value = audioSetting.Voice;
+            audioSource.volume = audioSetting.Music / 4;
         }
 
 

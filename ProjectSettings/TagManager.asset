@@ -10,6 +10,7 @@ TagManager:
   - Iblast
   - Sword
   - Block
+  - Campfire
   layers:
   - Default
   - TransparentFX

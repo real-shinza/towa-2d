@@ -54,7 +54,7 @@ namespace Title
         public void ChangedMusicSlider()
         {
             audioSetting.Music = musicSlider.value;
-            audioSource.volume = musicSlider.value / 2;
+            audioSource.volume = musicSlider.value / 4;
         }
 
         public void ChangedVoiceSlider()

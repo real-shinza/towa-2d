@@ -15,6 +15,8 @@ namespace Game
         private int blockStrikingEnemyScore;
         [SerializeField]
         private int killEnemyScore;
+        [SerializeField]
+        private int goalScore;
 
 
 
@@ -38,19 +40,21 @@ namespace Game
         public void BlockIblast()
         {
             AddScore(blockIblastScore);
-            UpdateScoreText();
         }
 
         public void BlockStrikingEnemy()
         {
             AddScore(blockStrikingEnemyScore);
-            UpdateScoreText();
         }
 
         public void KillEnemy()
         {
             AddScore(killEnemyScore);
-            UpdateScoreText();
+        }
+
+        public void Goal(int value)
+        {
+            AddScore(goalScore * value);
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Game
 
 
 
+        public float RemainTime { get { return time; } }
         public float ElapsedTime { get { return maxTime - time; } }
 
 
@@ -38,6 +39,10 @@ namespace Game
                 return;
 
             time -= Time.deltaTime;
+
+            if (time < 0.0f)
+                time = 0.0f;
+
             UpdateTimeText();
         }
 

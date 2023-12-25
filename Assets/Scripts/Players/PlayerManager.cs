@@ -1,6 +1,7 @@
 using Effect;
 using Game;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -15,11 +16,15 @@ namespace Player
         [SerializeField]
         private Rigidbody2D rigidbody2d;
         [SerializeField]
-        private ContactFilter2D filter2d;
+        private ContactFilter2D filterDown, filterLeft, filterRight;
         [SerializeField]
         private GameObject explosionPrefab;
         [SerializeField]
         private GameManager gameManager;
+        [SerializeField]
+        private ScoreManager scoreManager;
+        [SerializeField]
+        private TimeManager timeManager;
         [SerializeField]
         private PlayerHpManager playerHpManager;
         [SerializeField]
@@ -28,7 +33,7 @@ namespace Player
         private float enemyDamage, attackDamage, straikeDamage;
 
         private float moveVec, hp;
-        private bool isGround, canJump, isFinish;
+        private bool isGround, canJump, isGoal, isFinish;
         private PlayerState state;
 
 
@@ -59,6 +64,10 @@ namespace Player
                 state = PlayerState.HURT;
                 hp -= attackDamage;
                 playerHpManager.SetGage(hp, maxHp);
+            }
+            else if (otherObj.tag == "Campfire")
+            {
+                isGoal = true;
             }
         }
 
@@ -99,6 +108,7 @@ namespace Player
                 Hurt();
             }
 
+            Win();
             Die();
 
             // 実際の移動処理
@@ -107,7 +117,7 @@ namespace Player
 
         private void Ground()
         {
-            if (rigidbody2d.IsTouching(filter2d))
+            if (rigidbody2d.IsTouching(filterDown))
             {
                 SetGround(true);
             }
@@ -143,6 +153,10 @@ namespace Player
             if (moveVec != 0.0f)
             {
                 SetMove(true);
+
+                if ((rigidbody2d.IsTouching(filterLeft) && moveVec < 0.0f) &&
+                    (rigidbody2d.IsTouching(filterRight) && moveVec > 0.0f))
+                    moveVec = 0.0f;
 
                 this.moveVec = moveVec;
 
@@ -180,7 +194,7 @@ namespace Player
                 SetJumpAttack(true);
                 playerAudio.PlayVoice("JumpAttack");
             }
-            else if (rigidbody2d.IsTouching(filter2d))
+            else if (rigidbody2d.IsTouching(filterDown))
             {
                 SetJumpAttack(false);
             }
@@ -241,9 +255,26 @@ namespace Player
             }
         }
 
+        private void Win()
+        {
+            if (isGoal && state != PlayerState.WIN)
+            {
+                playerAudio.PlayVoice("Win");
+                SetState(true, PlayerState.WIN);
+                playerAnimation.WinTrigger();
+                scoreManager.Goal((int)timeManager.RemainTime);
+                gameManager.FinishGame();
+            }
+            else if (state == PlayerState.WIN && !playerAudio.GetIsPlaying() && !isFinish)
+            {
+                isFinish = true;
+                gameManager.ActiveResult();
+            }
+        }
+
         private void Die()
         {
-            if (transform.position.y < -5.5f && state != PlayerState.DIE)
+            if ((transform.position.y < -5.5f || timeManager.RemainTime <= 0.0f) && state != PlayerState.DIE)
             {
                 hp = 0f;
                 playerHpManager.SetGage(hp, maxHp);

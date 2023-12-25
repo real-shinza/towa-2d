@@ -14,17 +14,12 @@ namespace Camera
             if (!playerTransform)
                 return;
 
-            float x, y, z = -10.0f;
+            float x, y = 0f, z = -10f;
 
-            if (playerTransform.position.x < 0.0f)
-                x = 0.0f;
+            if (playerTransform.position.x < 0f)
+                x = 0f;
             else
                 x = playerTransform.position.x;
-
-            if (playerTransform.position.y < 0.0f)
-                y = 0.0f;
-            else
-                y = playerTransform.position.y;
 
             transform.position = new Vector3(x, y, z);
         }

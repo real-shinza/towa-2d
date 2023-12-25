@@ -2179,6 +2179,7 @@ MonoBehaviour:
   version: {fileID: 1442936197}
   musicSlider: {fileID: 2027463119}
   voiceSlider: {fileID: 461216040}
+  audioSource: {fileID: 1176976137}
   audioSetting: {fileID: 11400000, guid: 5e4159291d4d74a4ab8f40792b8f127d, type: 2}
 --- !u!82 &1176976137
 AudioSource:

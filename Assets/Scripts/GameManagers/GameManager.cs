@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
-        musicAudioSource.volume = audioSetting.Music / 2;
-        voiceAudioSource.volume = audioSetting.Voice / 2;
+        musicAudioSource.volume = audioSetting.Music / 4;
+        voiceAudioSource.volume = audioSetting.Voice / 4;
     }
 
 

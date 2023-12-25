@@ -18,7 +18,7 @@ namespace Effect
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            // 壁や剣などに衝突したら破壊
+            // 壁に衝突したら破壊
             if (other.gameObject.tag == "Tile")
             {
                 DestroyTrigger();
