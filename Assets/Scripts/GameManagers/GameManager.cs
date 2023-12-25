@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using unityroom.Api;
 
 public class GameManager : MonoBehaviour
 {
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     public void ActiveResult()
     {
+        UnityroomApiClient.Instance.SendScore(1, scoreManager.TotalScore, ScoreboardWriteMode.Always);
         scoreText.text = $"{scoreManager.TotalScore:D8}";
         var timeSpan = TimeSpan.FromSeconds(timeManager.ElapsedTime);
         var minutes = timeSpan.Minutes;
