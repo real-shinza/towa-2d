@@ -66,6 +66,8 @@ namespace Title
         {
             language.LanguageType = (LanguageType)languageDropdown.value;
             languageDropdown.options.Clear();
+            languageDropdown.captionText.font = language.GetFont();
+            languageDropdown.itemText.font = language.GetFont();
             languageDropdown.options = GetOptions();
         }
 
@@ -76,14 +78,8 @@ namespace Title
 
             for (int i = 0; i < language.GetLength(); i++)
             {
-                string text;
-                if (languageType == i)
-                    text = language.GetName(languageType, i);
-                else
-                    text = $"{language.GetName(languageType, i)} ({language.GetName(i, i)})";
-
                 var option = new Dropdown.OptionData();
-                option.text = text;
+                option.text = language.GetName(languageType, i);
                 options.Add(option);
             }
 

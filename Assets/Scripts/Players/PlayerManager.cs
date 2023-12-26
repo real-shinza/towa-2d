@@ -61,9 +61,13 @@ namespace Player
             if (otherObj.tag == "Iblast")
             {
                 otherObj.GetComponent<IblastManager>().DestroyTrigger();
-                state = PlayerState.HURT;
-                hp -= attackDamage;
-                playerHpManager.SetGage(hp, maxHp);
+
+                if (state != PlayerState.HURT)
+                {
+                    state = PlayerState.HURT;
+                    hp -= attackDamage;
+                    playerHpManager.SetGage(hp, maxHp);
+                }
             }
             else if (otherObj.tag == "Campfire")
             {
@@ -74,6 +78,9 @@ namespace Player
         private void OnCollisionEnter2D(Collision2D other)
         {
             var otherObj = other.gameObject;
+
+            if (state == PlayerState.HURT || state == PlayerState.WIN || state == PlayerState.DIE)
+                return;
 
             if (other.gameObject.tag == "Enemy")
             {
