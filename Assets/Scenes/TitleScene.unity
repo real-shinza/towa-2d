@@ -2882,8 +2882,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "<size=40><color=aqua><b>\u30B2\u30FC\u30E0\u30BF\u30A4\u30C8\u30EB</b></color></size>\r\n\u3068\u308F
     2D\r\nTowa 2D\r\n\u6C38\u8FDC 2D\r\n\u6C38\u9060 2D\r\n\uD1A0\uC640 2D\r\n\r\n<size=40><color=aqua><b>\u4F01\u753B</b></color></size>\r\n\u3068\u308F\r\n\u304B\u3044\u306A\u308A\r\n\r\n<size=40><color=aqua><b>\u30D7\u30ED\u30B0\u30E9\u30E0</b></color></size>\r\n\u304B\u3044\u306A\u308A\r\n\r\n<size=40><color=aqua><b>\u58F0
-    & \u53F0\u8A5E</b></color></size>\r\n\u3068\u308F\r\n\r\n<size=40><color=aqua><b>\u53F0\u8A5E\u7FFB\u8A33\u5354\u529B</b></color></size>\r\n\u4E2D\u56FD\u306E\u53CB\u4EBA\rC\n\u4E2D\u56FD\u306E\u53CB\u4EBA\rM\n\u97D3\u56FD\u306E\u53CB\u4EBA\rB\n\u30A4\u30F3\u30C9\u30CD\u30B7\u30A2\u306E\u53CB\u4EBA\rV\n\r\n<size=40><color=aqua><b>\u5BFE\u5FDC\u8A00\u8A9E</b></color></size>\r\n<size=35><color=aqua><b>\u97F3\u58F0</b></color></size>\r\n\u65E5\u672C\u8A9E\r\n\r\n<size=35><color=aqua><b>\u30C6\u30AD\u30B9\u30C8</b></color></size>\r\n\u65E5\u672C\u8A9E\r\nEnglish\r\n\u7B80\u4F53\u4E2D\u6587\r\n\u7E41\u9AD4\u4E2D\u6587\r\n\uD55C\uAD6D\uC5B4\r\nBahasa
-    Indonesia\r\n\r\n<size=40><color=aqua><b>\u30B2\u30FC\u30E0\u30A8\u30F3\u30B8\u30F3</b></color></size>\r\nUnity
+    & \u53F0\u8A5E</b></color></size>\r\n\u3068\u308F\r\n\r\n<size=40><color=aqua><b>\u53F0\u8A5E\u7FFB\u8A33\u5354\u529B</b></color></size>\r\n\u4E2D\u56FD\u306E\u53CB\u4EBA\rC\n\u4E2D\u56FD\u306E\u53CB\u4EBA\rM\n\u97D3\u56FD\u306E\u53CB\u4EBA\rB\n\u30A4\u30F3\u30C9\u30CD\u30B7\u30A2\u306E\u53CB\u4EBA\rV\n\r\n<size=40><color=aqua><b>\u5BFE\u5FDC\u8A00\u8A9E</b></color></size>\r\n<size=35><color=aqua><b>\u97F3\u58F0</b></color></size>\r\n\u65E5\u672C\u8A9E\r\n\r\n<size=35><color=aqua><b>\u30C6\u30AD\u30B9\u30C8</b></color></size>\r\n\u65E5\u672C\u8A9E\n\u82F1\u8A9E\n\u7C21\u4F53\u5B57\n\u7E41\u4F53\u5B57\n\u97D3\u56FD\u8A9E\n\u30A4\u30F3\u30C9\u30CD\u30B7\u30A2\u8A9E\n\r\n<size=40><color=aqua><b>\u30B2\u30FC\u30E0\u30A8\u30F3\u30B8\u30F3</b></color></size>\r\nUnity
     2022.3.14f1\r\n\r\n<size=40><color=aqua><b>\u4F7F\u7528\u7D20\u6750</b></color></size>\r\nKnight
     Sprite Sheet (Free)\r\nhttps://assetstore.unity.com/packages/2d/characters/knight-sprite-sheet-free-93897\r\n\r\nDragon
     Warrior (Free)\r\nhttps://assetstore.unity.com/packages/2d/characters/dragon-warrior-free-93896\r\n\r\nPixel
@@ -2969,7 +2968,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: v 0.0.0
+  m_Text: Ver 0.0.0
 --- !u!222 &1442936198
 CanvasRenderer:
   m_ObjectHideFlags: 0

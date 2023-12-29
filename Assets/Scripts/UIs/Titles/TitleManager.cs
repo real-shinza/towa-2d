@@ -49,7 +49,7 @@ namespace Title
 
         private void InitVersion()
         {
-            version.text = $"v {Application.version}";
+            version.text = $"Ver {Application.version}";
         }
     }
 }
