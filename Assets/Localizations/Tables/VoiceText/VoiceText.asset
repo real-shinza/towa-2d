@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: VoiceText
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: e0998861b39bd184a9d8f16eec990734, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: e58f22f77ee09cf4c81ccffcf29cde10, type: 2}
+  - {fileID: 11400000, guid: 96a1edc12b22a624fa5054275a7494ed, type: 2}
+  - {fileID: 11400000, guid: 58de67f38df5b994c80776be2252458f, type: 2}
+  - {fileID: 11400000, guid: 724fc331d4c966c47bacec682e5e99fc, type: 2}
+  - {fileID: 11400000, guid: 662d2fbc963075246bca16992c213e92, type: 2}
+  - {fileID: 11400000, guid: 4228658def80acd49b273ca91ce3a7c7, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

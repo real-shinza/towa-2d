@@ -1,5 +1,6 @@
-using LanguageData;
+using UnityEditor.Localization;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 namespace Player
@@ -9,11 +10,11 @@ namespace Player
         [SerializeField]
         private AudioSource audioSource;
         [SerializeField]
-        private PlayerVoice playerVoice;
-        [SerializeField]
-        private Language language;
-        [SerializeField]
         private Text lines;
+        [SerializeField]
+        private LocalizationTableCollection voiceTextTable;
+        [SerializeField]
+        private LocalizationTableCollection voiceAudioTable;
 
 
         private void Update()
@@ -28,22 +29,34 @@ namespace Player
         
         public void PlayVoice(string id)
         {
-            var audioClip = playerVoice.GetAudioClip(id);
-            var text = playerVoice.GetText(id, language.LanguageType);
-            var font = language.GetFont();
+            var voiceText = new LocalizedString()
+            {
+                TableReference = voiceTextTable.SharedData.TableCollectionName,
+                TableEntryReference = voiceTextTable.SharedData.GetEntry($"Voice/{id}").Id,
+            };
+            var voiceAudio = new LocalizedAudioClip()
+            {
+                TableReference = voiceAudioTable.SharedData.TableCollectionName,
+                TableEntryReference = voiceAudioTable.SharedData.GetEntry($"Voice/{id}").Id,
+            };
 
-            if (audioClip == null || text == null)
+            if (voiceText == null || voiceAudio == null)
                 return;
+
+            var text = voiceText.GetLocalizedString();
+            var audioClip = voiceAudio.LoadAsset();
+
+            if (text == null || audioClip == null)
+                return;
+
+            // ボイステキスト表示
+            lines.text = text;
+            lines.enabled = true;
 
             // ボイス音声再生
             audioSource.Stop();
             audioSource.clip = audioClip;
             audioSource.Play();
-
-            // ボイステキスト表示
-            lines.text = text;
-            lines.font = font;
-            lines.enabled = true;
         }
 
         public bool GetIsPlaying()

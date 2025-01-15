@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: VoiceAudio Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: VoiceAudio
+  m_TableCollectionNameGuidString: ee7b6b0bda812754dac7805ac32e54b0
+  m_Entries:
+  - m_Id: 1077885222912
+    m_Key: Voice/Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1081202917376
+    m_Key: Voice/Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1085132980224
+    m_Key: Voice/Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089205649408
+    m_Key: Voice/JumpAttack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1092045193216
+    m_Key: Voice/Strike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094364643328
+    m_Key: Voice/Block
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1096616984576
+    m_Key: Voice/Crouch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1098655416320
+    m_Key: Voice/Hurt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1101138444288
+    m_Key: Voice/Win
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1102988132352
+    m_Key: Voice/Die
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items:
+    - rid: 8981062011246084172
+  m_KeyGenerator:
+    rid: 8981062011246084171
+  references:
+    version: 2
+    RefIds:
+    - rid: 8981062011246084171
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1736957291564
+    - rid: 8981062011246084172
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 1077885222912
+          m_TableCodes:
+          - en
+          - zh
+          - zh-TW
+          - ko
+          - id
+          - ja
+        - m_KeyId: 1081202917376
+          m_TableCodes:
+          - ja
+          - en
+          - zh
+          - zh-TW
+          - ko
+          - id
+        - m_KeyId: 1085132980224
+          m_TableCodes:
+          - ja
+          - en
+          - zh
+          - ko
+          - zh-TW
+          - id
+        - m_KeyId: 1089205649408
+          m_TableCodes:
+          - ja
+          - en
+          - zh
+          - zh-TW
+          - ko
+          - id
+        - m_KeyId: 1092045193216
+          m_TableCodes:
+          - ja
+          - en
+          - zh
+          - zh-TW
+          - ko
+          - id
+        - m_KeyId: 1094364643328
+          m_TableCodes:
+          - ja
+          - en
+          - zh
+          - zh-TW
+          - ko
+          - id
+        - m_KeyId: 1096616984576
+          m_TableCodes:
+          - ja
+          - en
+          - zh
+          - zh-TW
+          - ko
+          - id
+        - m_KeyId: 1098655416320
+          m_TableCodes:
+          - ja
+          - en
+          - zh
+          - zh-TW
+          - ko
+          - id
+        - m_KeyId: 1101138444288
+          m_TableCodes:
+          - ja
+          - en
+          - zh
+          - zh-TW
+          - ko
+          - id
+        - m_KeyId: 1102988132352
+          m_TableCodes:
+          - ja
+          - en
+          - zh
+          - zh-TW
+          - ko
+          - id
+        m_TypeString: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

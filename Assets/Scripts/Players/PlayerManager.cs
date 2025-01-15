@@ -1,7 +1,6 @@
 using Effect;
 using Game;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Player
 {

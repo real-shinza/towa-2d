@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db626ad063b13545924a9839ac5fa83, type: 3}
+  m_Name: VoiceAudio
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: ee7b6b0bda812754dac7805ac32e54b0, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: db550b5607e7ecc4599885ae1d3c534e, type: 2}
+  - {fileID: 11400000, guid: 3b2d3f93190096549b6ea0aaa44bc995, type: 2}
+  - {fileID: 11400000, guid: 2782ad6e33c679447819f493f0f48733, type: 2}
+  - {fileID: 11400000, guid: 02689a095e68d254882e88faecb24f26, type: 2}
+  - {fileID: 11400000, guid: 319387e6e2dc618499840bae029b620b, type: 2}
+  - {fileID: 11400000, guid: 11c30ce7d9b0df04da5df433e47661af, type: 2}
+  m_Extensions: []
+  m_Group: Asset Table
+  references:
+    version: 2
+    RefIds: []

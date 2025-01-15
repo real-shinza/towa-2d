@@ -8,8 +8,6 @@ namespace Title
         [SerializeField]
         private Settings settings;
         [SerializeField]
-        private Loge loge;
-        [SerializeField]
         private TitleButton titleButton;
         [SerializeField]
         private Text version;
@@ -26,30 +24,10 @@ namespace Title
 
         private void Awake()
         {
-            InitTitleUi();
-            InitVersion();
+            version.text = $"Ver {Application.version}";
             musicSlider.value = audioSetting.Music;
             voiceSlider.value = audioSetting.Voice;
             audioSource.volume = audioSetting.Music / 4;
-        }
-
-
-
-        public void ChangedLanguange()
-        {
-            InitTitleUi();
-        }
-
-        private void InitTitleUi()
-        {
-            settings.ChangedLanguange();
-            loge.InitLogo();
-            titleButton.InitButton();
-        }
-
-        private void InitVersion()
-        {
-            version.text = $"Ver {Application.version}";
         }
     }
 }

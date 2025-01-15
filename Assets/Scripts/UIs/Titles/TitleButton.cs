@@ -1,4 +1,3 @@
-using LanguageData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,12 +6,6 @@ namespace Title
 {
     public class TitleButton : MonoBehaviour
     {
-        [SerializeField]
-        private string[] playNames;
-        [SerializeField]
-        private string[] settingsNames;
-        [SerializeField]
-        private string[] creditsNames;
         [SerializeField]
         private Text playButtonText;
         [SerializeField]
@@ -25,20 +18,8 @@ namespace Title
         private GameObject settingsObject;
         [SerializeField]
         private GameObject creditsObject;
-        [SerializeField]
-        private Language language;
 
 
-
-        public void InitButton()
-        {
-            playButtonText.text = playNames[(int)language.LanguageType];
-            playButtonText.font = language.GetFont();
-            settingsButtonText.text = settingsNames[(int)language.LanguageType];
-            settingsButtonText.font = language.GetFont();
-            creditsButtonText.text = creditsNames[(int)language.LanguageType];
-            creditsButtonText.font = language.GetFont();
-        }
 
         public void OnPlay()
         {
