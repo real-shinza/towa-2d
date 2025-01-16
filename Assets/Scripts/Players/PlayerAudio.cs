@@ -1,4 +1,3 @@
-using UnityEditor.Localization;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.UI;
@@ -12,9 +11,9 @@ namespace Player
         [SerializeField]
         private Text lines;
         [SerializeField]
-        private LocalizationTableCollection voiceTextTable;
+        private LocalizedStringTable voiceTextTable;
         [SerializeField]
-        private LocalizationTableCollection voiceAudioTable;
+        private LocalizedAssetTable voiceAudioTable;
 
 
         private void Update()
@@ -29,11 +28,14 @@ namespace Player
         
         public void PlayVoice(string id)
         {
+            var voiceTextTable = this.voiceTextTable.GetTable();
             var voiceText = new LocalizedString()
             {
-                TableReference = voiceTextTable.SharedData.TableCollectionName,
+                
+                TableReference = voiceTextTable.TableCollectionName,
                 TableEntryReference = voiceTextTable.SharedData.GetEntry($"Voice/{id}").Id,
             };
+            var voiceAudioTable = this.voiceAudioTable.GetTable();
             var voiceAudio = new LocalizedAudioClip()
             {
                 TableReference = voiceAudioTable.SharedData.TableCollectionName,

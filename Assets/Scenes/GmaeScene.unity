@@ -13139,8 +13139,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1268781877}
   lines: {fileID: 548120348}
-  voiceTextTable: {fileID: 11400000, guid: 5b14afb17fc356f45b5c303c4abe4a3b, type: 2}
-  voiceAudioTable: {fileID: 11400000, guid: cd4dfbcaeb317094bb73c3c8f6afd05f, type: 2}
+  voiceTextTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:e0998861b39bd184a9d8f16eec990734
+  voiceAudioTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:ee7b6b0bda812754dac7805ac32e54b0
 --- !u!114 &1268781880
 MonoBehaviour:
   m_ObjectHideFlags: 0
