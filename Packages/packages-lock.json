@@ -272,6 +272,13 @@
       "dependencies": {},
       "hash": "c4dea57e1c27567bac512e090a356b08abf83d0b"
     },
+    "jp.juha.streaming-assets-injector": {
+      "version": "https://github.com/KurisuJuha/StreamingAssetsInjector.git?path=Assets/StreamingAssetsInjector",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "8026f1ed6239932d8f8a806d9dc12dfaa2fca89a"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

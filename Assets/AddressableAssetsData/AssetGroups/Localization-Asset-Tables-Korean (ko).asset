@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Asset-Tables-Korean (ko)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Asset-Tables-Korean (ko)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 2f68ff8df706a9b4abbf505a653d0fe3
+  m_SerializeEntries:
+  - m_GUID: ac8067acf2d001244a4f97e36f2011af
+    m_Address: Font_ko
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02107b0917e3ee442810733842de1c11
+    m_Address: TitleLogo_ko
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 319387e6e2dc618499840bae029b620b
+    m_Address: VoiceAudio_ko
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 3bef73b6f75521a4b98662331ffe0734, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 49613b043da2b68409017cc1300359fa, type: 2}
+    - {fileID: 11400000, guid: 6e0a3bcc50247f740a584a60199edcde, type: 2}

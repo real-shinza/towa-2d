@@ -50,3 +50,4 @@ Unity 2022.3.14f1
 [Sleek essential UI pack](https://assetstore.unity.com/packages/2d/gui/icons/sleek-essential-ui-pack-170650)  
 [Dark Theme UI](https://assetstore.unity.com/packages/2d/gui/dark-theme-ui-199010)  
 [Casual Game BGM #5](https://assetstore.unity.com/packages/audio/music/casual-game-bgm-5-135943)  
+[StreamingAssetsInjector](https://github.com/KurisuJuha/StreamingAssetsInjector)  
