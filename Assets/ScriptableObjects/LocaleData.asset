@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1afbb9b2c8d13b741b19e5f00a80568b, type: 3}
-  m_Name: Language
+  m_Script: {fileID: 11500000, guid: 107e1870e3828d94ea39d9e2d555fbab, type: 3}
+  m_Name: LocaleData
   m_EditorClassIdentifier: 
-  data:
+  datas:
   - locale: {fileID: 11400000, guid: 2d094968f45979047a96b1ab24f734fa, type: 2}
     localizedString:
       m_TableReference:
@@ -68,7 +68,7 @@ MonoBehaviour:
       m_TableReference:
         m_TableCollectionName: GUID:5c422cbbb0af0174d9ed738f01c8bd51
       m_TableEntryReference:
-        m_KeyId: 294624116736
+        m_KeyId: 193956626432
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0

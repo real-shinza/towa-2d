@@ -1,6 +1,7 @@
 using Enemy;
 using Game;
 using System;
+using Towa.Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -27,13 +28,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private AudioSource voiceAudioSource;
     [SerializeField]
-    private AudioSetting audioSetting;
+    private Towa.Audio.AudioParam audioSetting;
 
 
 
     public void Awake()
     {
-        musicAudioSource.volume = audioSetting.Music / 4;
+        musicAudioSource.volume = audioSetting.Bgm / 4;
         voiceAudioSource.volume = audioSetting.Voice / 4;
     }
 

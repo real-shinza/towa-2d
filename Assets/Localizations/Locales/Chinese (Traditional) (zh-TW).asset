@@ -27,4 +27,4 @@ MonoBehaviour:
     - rid: 8981062011246084144
       type: {class: FallbackLocale, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Locale: {fileID: 11400000, guid: 82c3be9f96b9de74a83b5df6264a1627, type: 2}
+        m_Locale: {fileID: 11400000, guid: 5862cd0e83aea40448cf3a682f397441, type: 2}

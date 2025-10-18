@@ -1,13 +1,11 @@
 using UnityEngine;
 
-namespace Camera
+namespace Towa.Camera
 {
     public class CameraManager : MonoBehaviour
     {
         [SerializeField]
         private Transform playerTransform;
-
-
 
         private void Update()
         {

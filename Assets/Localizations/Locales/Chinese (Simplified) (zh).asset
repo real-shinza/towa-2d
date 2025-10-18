@@ -15,11 +15,16 @@ MonoBehaviour:
   m_Identifier:
     m_Code: zh
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 5041594365739270150
   m_LocaleName: Chinese (Simplified) (zh)
   m_CustomFormatCultureCode: 
   m_UseCustomFormatter: 0
   m_SortOrder: 2
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5041594365739270150
+      type: {class: FallbackLocale, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Locale: {fileID: 11400000, guid: 5862cd0e83aea40448cf3a682f397441, type: 2}
