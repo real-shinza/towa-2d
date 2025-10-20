@@ -1,4 +1,4 @@
-namespace Player
+namespace Towa.Player
 {
     public enum PlayerState
     {

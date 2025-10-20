@@ -1,37 +1,41 @@
 using UnityEngine;
 
-namespace Enemy
+namespace Towa.Enemy
 {
     public class EnemyAnimation : MonoBehaviour
     {
         [SerializeField]
         private Animator animator;
 
+        private readonly int isGround = Animator.StringToHash("IsGround");
+        private readonly int isMove = Animator.StringToHash("IsMove");
+        private readonly int isAttack = Animator.StringToHash("IsAttack");
+        private readonly int isStrike = Animator.StringToHash("IsStrike");
+        private readonly int dieTrigger = Animator.StringToHash("DieTrigger");
 
-
-        public void SetIsGround(bool isGround)
+        public void SetIsGround(bool value)
         {
-            animator.SetBool("IsGround", isGround);
+            animator.SetBool(isGround, value);
         }
 
-        public void SetIsMove(bool isMove)
+        public void SetIsMove(bool value)
         {
-            animator.SetBool("IsMove", isMove);
+            animator.SetBool(isMove, value);
         }
 
-        public void SetIsAttack(bool isAttack)
+        public void SetIsAttack(bool value)
         {
-            animator.SetBool("IsAttack", isAttack);
+            animator.SetBool(isAttack, value);
         }
 
-        public void SetIsStrike(bool isStrike)
+        public void SetIsStrike(bool value)
         {
-            animator.SetBool("IsStrike", isStrike);
+            animator.SetBool(isStrike, value);
         }
 
         public void DieTrigger()
         {
-            animator.SetTrigger("DieTrigger");
+            animator.SetTrigger(dieTrigger);
         }
     }
 }

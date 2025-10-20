@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game
+namespace Towa.UI.Game
 {
     public class ScoreManager : MonoBehaviour
     {
@@ -18,11 +18,7 @@ namespace Game
         [SerializeField]
         private int goalScore;
 
-
-
         public int TotalScore { get { return totalScore; } }
-
-
 
         private void AddScore(int score)
         {
@@ -34,8 +30,6 @@ namespace Game
         {
             scoreText.text = $"{totalScore:D8}";
         }
-
-
 
         public void BlockIblast()
         {

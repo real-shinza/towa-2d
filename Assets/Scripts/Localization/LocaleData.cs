@@ -10,8 +10,6 @@ namespace Towa.Local
         [SerializeField]
         private Data[] datas;
 
-        public Data[] Datas { get { return datas; } }
-
         public Locale GetLocale(int index)
         {
             return datas[index].Locale;

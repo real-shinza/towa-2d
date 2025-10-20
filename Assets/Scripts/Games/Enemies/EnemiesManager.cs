@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Enemy
+namespace Towa.Enemy
 {
     public class EnemiesManager : MonoBehaviour
     {
@@ -10,8 +10,6 @@ namespace Enemy
         {
             RegistChildren();
         }
-
-
 
         private void RegistChildren()
         {
@@ -23,7 +21,7 @@ namespace Enemy
         {
             foreach (var enemyManager in enemyManagers)
             {
-                enemyManager.GetIsFinish(true);
+                enemyManager.SetIsFinish(true);
             }
         }
     }

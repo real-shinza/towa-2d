@@ -1,15 +1,12 @@
 using UnityEngine;
 
-namespace Effect
+namespace Towa.Effect
 {
     public class IblastManager : MonoBehaviour
     {
         [SerializeField]
         private float speed;
-
         private float moveVec;
-
-
 
         void Update()
         {
@@ -19,19 +16,17 @@ namespace Effect
         private void OnTriggerEnter2D(Collider2D other)
         {
             // 壁に衝突したら破壊
-            if (other.gameObject.tag == "Tile")
+            if (other.gameObject.CompareTag("Tile"))
             {
                 DestroyTrigger();
             }
         }
 
-        void OnBecameInvisible()
+        private void OnBecameInvisible()
         {
             // 画面の外に出たら破壊
             DestroyTrigger();
         }
-
-
 
         public void DestroyTrigger()
         {

@@ -1,4 +1,4 @@
-namespace Enemy
+namespace Towa.Enemy
 {
     public enum EnemyState
     {

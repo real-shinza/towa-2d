@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Enemy
+namespace Towa.Enemy
 {
     public class EnemyController : MonoBehaviour
     {
@@ -20,22 +20,17 @@ namespace Enemy
         private Rigidbody2D rigidbody2d;
         [SerializeField]
         private ContactFilter2D filterLeft, filterRight;
-
         private EnemyState state;
-        private float coolTime = new float();
+        private float coolTime = new();
         private float moveDir;
         private bool isAction;
         private bool isDie;
-
-
 
         private void Update()
         {
             CountdownCoolTime();
             StateUpdate();
         }
-
-
 
         private void CountdownCoolTime()
         {
@@ -118,8 +113,6 @@ namespace Enemy
             state = EnemyState.NONE;
             coolTime = GetCoolTime();
         }
-
-
 
         public EnemyState GetState() { return state; }
 

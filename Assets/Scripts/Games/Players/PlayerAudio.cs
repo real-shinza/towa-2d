@@ -1,8 +1,9 @@
+using Towa.Audio;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.UI;
 
-namespace Player
+namespace Towa.Player
 {
     public class PlayerAudio : MonoBehaviour
     {
@@ -11,10 +12,16 @@ namespace Player
         [SerializeField]
         private Text lines;
         [SerializeField]
+        private AudioParam audioParam;
+        [SerializeField]
         private LocalizedStringTable voiceTextTable;
         [SerializeField]
         private LocalizedAssetTable voiceAudioTable;
 
+        private void Awake()
+        {
+            audioSource.volume = audioParam.Voice / 4;
+        }
 
         private void Update()
         {
@@ -24,14 +31,11 @@ namespace Player
             }
         }
         
-        
-        
         public void PlayVoice(string id)
         {
             var voiceTextTable = this.voiceTextTable.GetTable();
             var voiceText = new LocalizedString()
             {
-                
                 TableReference = voiceTextTable.TableCollectionName,
                 TableEntryReference = voiceTextTable.SharedData.GetEntry($"Voice/{id}").Id,
             };

@@ -1,23 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Player
+namespace Towa.Player
 {
     public class PlayerController : MonoBehaviour
     {
         [SerializeField]
         private PlayerInput playerInput;
-
         private InputAction moveAction, jumpAction, attackAction, strikeAction, guardAction, pauseAction;
-
-
 
         private void Awake()
         {
             SetupInputAction();
         }
-
-
 
         private void SetupInputAction()
         {
@@ -28,8 +23,6 @@ namespace Player
             guardAction = playerInput.currentActionMap["Block"];
             pauseAction = playerInput.currentActionMap["Pause"];
         }
-
-
 
         public Vector2 GetInputMove() { return moveAction.ReadValue<Vector2>(); }
         public bool GetInputJump() { return jumpAction.triggered; }

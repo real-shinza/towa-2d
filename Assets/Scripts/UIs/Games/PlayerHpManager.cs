@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game
+namespace Towa.UI.Game
 {
     public class PlayerHpManager : MonoBehaviour
     {
@@ -11,14 +11,10 @@ namespace Game
         private float gageSpeed;
         private float gage, gageMemory;
 
-
-
         private void Update()
         {
             UpdateGage();
         }
-
-
 
         private void UpdateGage()
         {

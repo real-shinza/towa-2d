@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Effect
+namespace Towa.Effect
 {
     public class ExplosionManager : MonoBehaviour
     {

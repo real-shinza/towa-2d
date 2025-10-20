@@ -1,8 +1,8 @@
-using Enemy;
-using Game;
+using Towa.Enemy;
+using Towa.UI.Game;
 using UnityEngine;
 
-namespace Player
+namespace Towa.Player
 {
     public class Sword : MonoBehaviour
     {
@@ -13,7 +13,7 @@ namespace Player
         {
             var otherObj = other.gameObject;
 
-            if (otherObj.tag == "Enemy" || otherObj.tag == "StrikingEnemy")
+            if (otherObj.CompareTag("Enemy") || otherObj.CompareTag("StrikingEnemy"))
             {
                 otherObj.GetComponent<EnemyController>().DestroyTrigger();
                 scoreManager.KillEnemy();

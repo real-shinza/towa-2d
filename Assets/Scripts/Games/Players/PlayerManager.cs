@@ -1,8 +1,8 @@
-using Effect;
-using Game;
+using Towa.Effect;
+using Towa.UI.Game;
 using UnityEngine;
 
-namespace Player
+namespace Towa.Player
 {
     public class PlayerManager : MonoBehaviour
     {
@@ -30,16 +30,11 @@ namespace Player
         private float moveSpeed, strikeSpeed, jumpForce, maxHp;
         [SerializeField]
         private float enemyDamage, attackDamage, straikeDamage;
-
         private float moveVec, hp;
         private bool isGround, canJump, isGoal, isFinish;
         private PlayerState state;
 
-
-
         public PlayerState State { get { return state; } set { state = value; } }
-
-
 
         private void Start()
         {
@@ -57,7 +52,7 @@ namespace Player
         {
             var otherObj = other.gameObject;
 
-            if (otherObj.tag == "Iblast")
+            if (otherObj.CompareTag("Iblast"))
             {
                 otherObj.GetComponent<IblastManager>().DestroyTrigger();
 
@@ -68,7 +63,7 @@ namespace Player
                     playerHpManager.SetGage(hp, maxHp);
                 }
             }
-            else if (otherObj.tag == "Campfire")
+            else if (otherObj.CompareTag("Campfire"))
             {
                 isGoal = true;
             }
@@ -81,21 +76,19 @@ namespace Player
             if (state == PlayerState.HURT || state == PlayerState.WIN || state == PlayerState.DIE)
                 return;
 
-            if (other.gameObject.tag == "Enemy")
+            if (otherObj.CompareTag("Enemy"))
             {
                 state = PlayerState.HURT;
                 hp -= enemyDamage;
                 playerHpManager.SetGage(hp, maxHp);
             }
-            else if (otherObj.tag == "StrikingEnemy")
+            else if (otherObj.CompareTag("StrikingEnemy"))
             {
                 state = PlayerState.HURT;
                 hp -= straikeDamage;
                 playerHpManager.SetGage(hp, maxHp);
             }
         }
-
-
 
         private void MovementUpdate()
         {

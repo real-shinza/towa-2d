@@ -1,7 +1,7 @@
-using Effect;
+using Towa.Effect;
 using UnityEngine;
 
-namespace Enemy
+namespace Towa.Enemy
 {
     public class EnemyManager : MonoBehaviour
     {
@@ -19,13 +19,10 @@ namespace Enemy
         private GameObject explosionPrefab;
         [SerializeField]
         private float moveSpeed;
-
         private float moveVec;
         private bool isFinish;
         private EnemyState beforeState;
         private bool firstStateTime;
-
-
 
         private void Start()
         {
@@ -39,14 +36,23 @@ namespace Enemy
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.tag == "Block")
+            if (other.gameObject.CompareTag("Block"))
             {
                 moveVec = 0f;
             }
         }
 
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                moveVec = 0f;
+            }
+        }
 
-
+        /// <summary>
+        /// 行動処理
+        /// </summary>
         private void MovementUpdate()
         {
             Ground();
@@ -94,6 +100,9 @@ namespace Enemy
             transform.Translate(moveVec * Time.deltaTime * moveSpeed, 0.0f, 0.0f);
         }
 
+        /// <summary>
+        /// 地面着地処理
+        /// </summary>
         private void Ground()
         {
             if (rigidbody2d.IsTouching(filter2d))
@@ -102,6 +111,9 @@ namespace Enemy
                 SetGround(false);
         }
 
+        /// <summary>
+        /// 待機処理
+        /// </summary>
         private void Idle()
         {
             if (!firstStateTime)
@@ -111,6 +123,9 @@ namespace Enemy
             moveVec = 0.0f;
         }
 
+        /// <summary>
+        /// 移動処理
+        /// </summary>
         private void Move()
         {
             if (!firstStateTime)
@@ -122,6 +137,9 @@ namespace Enemy
             enemyAnimation.SetIsMove(true);
         }
 
+        /// <summary>
+        /// 攻撃処理
+        /// </summary>
         private void Attack()
         {
             if (!firstStateTime)
@@ -134,6 +152,9 @@ namespace Enemy
             GenerateIblast();
         }
 
+        /// <summary>
+        /// ストライク処理
+        /// </summary>
         private void Strike()
         {
             if (!firstStateTime)
@@ -146,6 +167,9 @@ namespace Enemy
             gameObject.tag = "StrikingEnemy";
         }
 
+        /// <summary>
+        /// 死亡処理
+        /// </summary>
         private void Die()
         {
             if (!firstStateTime)
@@ -170,19 +194,17 @@ namespace Enemy
         {
             var iblastObj = Instantiate(iblastPrefab, transform.position + new Vector3(0.75f * transform.localScale.x, -0.65f, 0.0f), Quaternion.identity);
             var iblast = iblastObj.GetComponent<IblastManager>();
-
             iblast.SetMoveVec(transform.localScale.x);
             iblast.SetScaleX(transform.localScale.x);
         }
+
         private void DestroyObject()
         {
             Destroy(gameObject);
             Instantiate(explosionPrefab, transform.position + new Vector3(0.0f, -0.3f, 0.0f), Quaternion.identity);
         }
 
-
-
-        public void GetIsFinish(bool isFinish)
+        public void SetIsFinish(bool isFinish)
         {
             this.isFinish = isFinish;
         }

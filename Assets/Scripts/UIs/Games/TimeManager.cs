@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game
+namespace Towa.UI.Game
 {
     public class TimeManager : MonoBehaviour
     {
@@ -10,16 +10,11 @@ namespace Game
         private float maxTime;
         [SerializeField]
         private Text timeText;
-
         private float time;
         private bool isFinish;
 
-
-
         public float RemainTime { get { return time; } }
         public float ElapsedTime { get { return maxTime - time; } }
-
-
 
         private void Start()
         {
@@ -30,8 +25,6 @@ namespace Game
         {
             CountdownTimer();
         }
-
-
 
         private void CountdownTimer()
         {
@@ -54,8 +47,6 @@ namespace Game
             var milliseconds = timeSpan.Milliseconds;
             timeText.text = $"{minutes:D2}:{seconds:D2}.{milliseconds:D3}";
         }
-
-
 
         public void FinishGame()
         {
