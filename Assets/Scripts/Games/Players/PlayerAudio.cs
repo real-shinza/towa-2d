@@ -13,10 +13,6 @@ namespace Towa.Player
         private Text lines;
         [SerializeField]
         private AudioParam audioParam;
-        [SerializeField]
-        private LocalizedStringTable voiceTextTable;
-        [SerializeField]
-        private LocalizedAssetTable voiceAudioTable;
 
         private void Awake()
         {
@@ -33,18 +29,9 @@ namespace Towa.Player
         
         public void PlayVoice(string id)
         {
-            var voiceTextTable = this.voiceTextTable.GetTable();
-            var voiceText = new LocalizedString()
-            {
-                TableReference = voiceTextTable.TableCollectionName,
-                TableEntryReference = voiceTextTable.SharedData.GetEntry($"Voice/{id}").Id,
-            };
-            var voiceAudioTable = this.voiceAudioTable.GetTable();
-            var voiceAudio = new LocalizedAudioClip()
-            {
-                TableReference = voiceAudioTable.SharedData.TableCollectionName,
-                TableEntryReference = voiceAudioTable.SharedData.GetEntry($"Voice/{id}").Id,
-            };
+            var voiceText = new LocalizedString("VoiceText", $"Voice/{id}");
+            var voiceAudio = new LocalizedAsset<AudioClip>();
+            voiceAudio.SetReference("VoiceAudio", $"Voice/{id}");
 
             if (voiceText == null || voiceAudio == null)
                 return;
