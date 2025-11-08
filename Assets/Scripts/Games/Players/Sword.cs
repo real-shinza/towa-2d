@@ -1,4 +1,3 @@
-using Towa.Enemy;
 using Towa.UI.Game;
 using UnityEngine;
 
@@ -11,13 +10,9 @@ namespace Towa.Player
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            var otherObj = other.gameObject;
-
-            if (otherObj.CompareTag("Enemy") || otherObj.CompareTag("StrikingEnemy"))
-            {
-                otherObj.GetComponent<EnemyController>().DestroyTrigger();
+            var go = other.gameObject;
+            if (go.CompareTag("Enemy") || go.CompareTag("StrikingEnemy"))
                 scoreManager.KillEnemy();
-            }
         }
     }
 }

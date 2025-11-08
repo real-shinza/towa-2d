@@ -1,4 +1,3 @@
-using Towa.Effect;
 using Towa.UI.Game;
 using UnityEngine;
 
@@ -11,17 +10,11 @@ namespace Towa.Player
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            var otherObj = other.gameObject;
-
-            if (otherObj.CompareTag("Iblast"))
-            {
-                otherObj.GetComponent<IblastManager>().DestroyTrigger();
+            var go = other.gameObject;
+            if (go.CompareTag("Iblast"))
                 scoreManager.BlockIblast();
-            }
-            else if (otherObj.CompareTag("StrikingEnemy"))
-            {
+            else if (go.CompareTag("StrikingEnemy"))
                 scoreManager.BlockStrikingEnemy();
-            }
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Towa.Player
 {
-    public class PlayerAudio : MonoBehaviour
+    public class PlayerVoice : MonoBehaviour
     {
         [SerializeField]
         private AudioSource audioSource;
@@ -27,7 +27,7 @@ namespace Towa.Player
             }
         }
         
-        public void PlayVoice(string id)
+        public void Play(string id)
         {
             var voiceText = new LocalizedString("VoiceText", $"Voice/{id}");
             var voiceAudio = new LocalizedAsset<AudioClip>();

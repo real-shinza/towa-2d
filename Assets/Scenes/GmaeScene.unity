@@ -14526,7 +14526,7 @@ GameObject:
   - component: {fileID: 1268781883}
   - component: {fileID: 1268781877}
   - component: {fileID: 1268781876}
-  - component: {fileID: 1268781882}
+  - component: {fileID: 1268781885}
   - component: {fileID: 1268781881}
   - component: {fileID: 1268781880}
   - component: {fileID: 1268781879}
@@ -14768,12 +14768,6 @@ MonoBehaviour:
   audioSource: {fileID: 1268781877}
   lines: {fileID: 548120348}
   audioParam: {fileID: 11400000, guid: 5e4159291d4d74a4ab8f40792b8f127d, type: 2}
-  voiceTextTable:
-    m_TableReference:
-      m_TableCollectionName: GUID:e0998861b39bd184a9d8f16eec990734
-  voiceAudioTable:
-    m_TableReference:
-      m_TableCollectionName: GUID:ee7b6b0bda812754dac7805ac32e54b0
 --- !u!114 &1268781880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14800,76 +14794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 1268781876}
---- !u!114 &1268781882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268781873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d99752686bd6e942bfddea29f7bc102, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 1268781881}
-  playerAnimation: {fileID: 1268781880}
-  playerAudio: {fileID: 1268781879}
-  rigidbody2d: {fileID: 1268781884}
-  filterDown:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 1
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 70
-    maxNormalAngle: 110
-  filterLeft:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 1
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: -10
-    maxNormalAngle: 10
-  filterRight:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 1
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 170
-    maxNormalAngle: 190
-  explosionPrefab: {fileID: 1525429099670381446, guid: ec9094048246c454a9b1a430d537da22, type: 3}
-  gameManager: {fileID: 141441556}
-  scoreManager: {fileID: 161918545}
-  timeManager: {fileID: 419088313}
-  playerHpManager: {fileID: 442263828}
-  moveSpeed: 5
-  strikeSpeed: 7
-  jumpForce: 420
-  maxHp: 200
-  enemyDamage: 10
-  attackDamage: 15
-  straikeDamage: 25
 --- !u!70 &1268781883
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -14932,6 +14856,76 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1268781885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268781873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e1e1785a43fe64c9707636196d718e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1268781881}
+  animator: {fileID: 1268781880}
+  voice: {fileID: 1268781879}
+  rigidbody2d: {fileID: 1268781884}
+  filterDown:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 1
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 70
+    maxNormalAngle: 110
+  filterLeft:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 1
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: -10
+    maxNormalAngle: 10
+  filterRight:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 1
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 170
+    maxNormalAngle: 190
+  explosionPrefab: {fileID: 1525429099670381446, guid: ec9094048246c454a9b1a430d537da22, type: 3}
+  gameManager: {fileID: 141441556}
+  scoreManager: {fileID: 161918545}
+  timeManager: {fileID: 419088313}
+  playerHpManager: {fileID: 442263828}
+  moveSpeed: 5
+  strikeSpeed: 7
+  jumpForce: 8.5
+  maxHp: 200
+  enemyDamage: 10
+  attackDamage: 15
+  straikeDamage: 20
 --- !u!1 &1284149591
 GameObject:
   m_ObjectHideFlags: 0

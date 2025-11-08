@@ -6,17 +6,19 @@ namespace Towa.Effect
     {
         [SerializeField]
         private float speed;
-        private float moveVec;
+        private float moveVecX;
 
         void Update()
         {
-            transform.Translate(moveVec * Time.deltaTime * speed, 0.0f, 0.0f);
+            transform.Translate(moveVecX * Time.deltaTime * speed, 0.0f, 0.0f);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            // 壁に衝突したら破壊
-            if (other.gameObject.CompareTag("Tile"))
+            var go = other.gameObject;
+            if (go.CompareTag("Player") ||
+                go.CompareTag("Block") ||
+                go.CompareTag("Tile"))
             {
                 DestroyTrigger();
             }
@@ -34,7 +36,7 @@ namespace Towa.Effect
             Destroy(gameObject);
         }
 
-        public void SetMoveVec(float moveVec) { this.moveVec = moveVec; }
+        public void SetMoveVecX(float moveVecX) { this.moveVecX = moveVecX; }
 
         public void SetScaleX(float scaleX) { transform.localScale = new Vector3(scaleX, 1.0f, 1.0f); }
     }

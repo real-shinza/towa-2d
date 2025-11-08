@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8234ef5d4f00f4d9516dc58778b286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyController: {fileID: 5199035347846838845}
-  enemyAnimation: {fileID: 2973158083696632019}
+  controller: {fileID: 5199035347846838845}
+  animator: {fileID: 2973158083696632019}
   rigidbody2d: {fileID: 5670466125442486644}
   filter2d:
     useTriggers: 0

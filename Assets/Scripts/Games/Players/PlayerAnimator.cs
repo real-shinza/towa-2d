@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Towa.Player
 {
-    public class PlayerAnimation : MonoBehaviour
+    public class PlayerAnimator : MonoBehaviour
     {
         [SerializeField]
         private Animator animator;
@@ -50,12 +50,12 @@ namespace Towa.Player
             animator.SetBool(isBlock, value);
         }
 
-        public void IsCrouch(bool value)
+        public void SetIsCrouch(bool value)
         {
             animator.SetBool(isCrouch, value);
         }
 
-        public void IsHurt(bool value)
+        public void SetIsHurt(bool value)
         {
             animator.SetBool(isHurt, value);
         }

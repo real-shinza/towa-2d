@@ -29,7 +29,7 @@ namespace Towa.Enemy
         private void Update()
         {
             CountdownCoolTime();
-            StateUpdate();
+            UpdateState();
         }
 
         private void CountdownCoolTime()
@@ -46,7 +46,7 @@ namespace Towa.Enemy
             }
         }
 
-        private void StateUpdate()
+        private void UpdateState()
         {
             var nextState = GetNextState();
 
@@ -58,14 +58,14 @@ namespace Towa.Enemy
         {
             // Playerが死亡した場合は何もしない
             if (!playerTransform)
-                return EnemyState.NONE;
+                return EnemyState.None;
 
             // 敵自身が死亡した場合
             if (isDie)
-                return EnemyState.DIE;
+                return EnemyState.Die;
 
             // 歩行中壁に当たった場合、歩行を中断する
-            if (state == EnemyState.MOVE &&
+            if (state == EnemyState.Move &&
                 ((rigidbody2d.IsTouching(filterLeft) && moveDir < 0.0f) ||
                 (rigidbody2d.IsTouching(filterRight) && moveDir > 0.0f)))
                 FinishAction();
@@ -78,9 +78,9 @@ namespace Towa.Enemy
             isAction = true;
 
             if (GetDistance() <= strikeDistance)
-                return EnemyState.STRIKE;
+                return EnemyState.Strike;
             else if (GetDistance() <= attackDistance)
-                return EnemyState.ATTACK;
+                return EnemyState.Attack;
             else
                 return GetStandby();
         }
@@ -98,9 +98,9 @@ namespace Towa.Enemy
             coolTime = GetCoolTime();
 
             if (Random.Range(0, 2) == 0)
-                return EnemyState.NONE;
+                return EnemyState.None;
             else
-                return EnemyState.MOVE;
+                return EnemyState.Move;
         }
 
         private float GetCoolTime()
@@ -110,7 +110,7 @@ namespace Towa.Enemy
 
         private void FinishAction()
         {
-            state = EnemyState.NONE;
+            state = EnemyState.None;
             coolTime = GetCoolTime();
         }
 

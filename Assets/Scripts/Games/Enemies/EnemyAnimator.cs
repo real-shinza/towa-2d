@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Towa.Enemy
 {
-    public class EnemyAnimation : MonoBehaviour
+    public class EnemyAnimator : MonoBehaviour
     {
         [SerializeField]
         private Animator animator;

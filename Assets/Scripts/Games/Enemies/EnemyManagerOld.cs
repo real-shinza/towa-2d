@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Towa.Enemy
 {
-    public class EnemyManager : MonoBehaviour
+    public class EnemyManagerOld : MonoBehaviour
     {
         [SerializeField]
-        private EnemyController enemyController;
+        private EnemyController controller;
         [SerializeField]
-        private EnemyAnimation enemyAnimation;
+        private EnemyAnimator animator;
         [SerializeField]
         private Rigidbody2D rigidbody2d;
         [SerializeField]
@@ -26,20 +26,21 @@ namespace Towa.Enemy
 
         private void Start()
         {
-            beforeState = enemyController.GetState();
+            beforeState = controller.GetState();
         }
 
         private void Update()
         {
-            MovementUpdate();
+            UpdateMovement();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.CompareTag("Block"))
-            {
+            var go = other.gameObject;
+            if (go.CompareTag("Block"))
                 moveVec = 0f;
-            }
+            // else if (go.CompareTag("Sword"))
+            //     DestroyTrigger();
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -53,45 +54,45 @@ namespace Towa.Enemy
         /// <summary>
         /// 行動処理
         /// </summary>
-        private void MovementUpdate()
+        private void UpdateMovement()
         {
             Ground();
 
             // もしゲーム終了していたら何もしない
             if (isFinish)
             {
-                enemyAnimation.SetIsMove(false);
-                enemyAnimation.SetIsAttack(false);
-                enemyAnimation.SetIsStrike(false);
+                animator.SetIsMove(false);
+                animator.SetIsAttack(false);
+                animator.SetIsStrike(false);
                 return;
             }
 
             // もしStateが変わっていたら
-            if (beforeState != enemyController.GetState())
+            if (beforeState != controller.GetState())
             {
-                beforeState = enemyController.GetState();
+                beforeState = controller.GetState();
                 firstStateTime = true;
-                enemyAnimation.SetIsMove(false);
-                enemyAnimation.SetIsAttack(false);
-                enemyAnimation.SetIsStrike(false);
+                animator.SetIsMove(false);
+                animator.SetIsAttack(false);
+                animator.SetIsStrike(false);
                 gameObject.tag = "Enemy";
             }
 
-            switch (enemyController.GetState())
+            switch (controller.GetState())
             {
-                case EnemyState.NONE:
+                case EnemyState.None:
                     Idle();
                     break;
-                case EnemyState.MOVE:
+                case EnemyState.Move:
                     Move();
                     break;
-                case EnemyState.ATTACK:
+                case EnemyState.Attack:
                     Attack();
                     break;
-                case EnemyState.STRIKE:
+                case EnemyState.Strike:
                     Strike();
                     break;
-                case EnemyState.DIE:
+                case EnemyState.Die:
                     Die();
                     break;
             }
@@ -132,9 +133,9 @@ namespace Towa.Enemy
                 return;
 
             firstStateTime = false;
-            moveVec = enemyController.GetMoveDirection();
+            moveVec = controller.GetMoveDirection();
             SetDirection(moveVec);
-            enemyAnimation.SetIsMove(true);
+            animator.SetIsMove(true);
         }
 
         /// <summary>
@@ -147,8 +148,8 @@ namespace Towa.Enemy
 
             firstStateTime = false;
             moveVec = 0.0f;
-            SetDirection(enemyController.GetDirection());
-            enemyAnimation.SetIsAttack(true);
+            SetDirection(controller.GetDirection());
+            animator.SetIsAttack(true);
             GenerateIblast();
         }
 
@@ -161,9 +162,9 @@ namespace Towa.Enemy
                 return;
 
             firstStateTime = false;
-            moveVec = enemyController.GetDirection() * 1.5f;
-            SetDirection(enemyController.GetDirection());
-            enemyAnimation.SetIsStrike(true);
+            moveVec = controller.GetDirection() * 1.5f;
+            SetDirection(controller.GetDirection());
+            animator.SetIsStrike(true);
             gameObject.tag = "StrikingEnemy";
         }
 
@@ -177,12 +178,12 @@ namespace Towa.Enemy
 
             firstStateTime = false;
             moveSpeed = 0.0f;
-            enemyAnimation.DieTrigger();
+            animator.DieTrigger();
         }
 
         private void SetGround(bool isGround)
         {
-            enemyAnimation.SetIsGround(isGround);
+            animator.SetIsGround(isGround);
         }
 
         private void SetDirection(float scaleX)
@@ -194,7 +195,7 @@ namespace Towa.Enemy
         {
             var iblastObj = Instantiate(iblastPrefab, transform.position + new Vector3(0.75f * transform.localScale.x, -0.65f, 0.0f), Quaternion.identity);
             var iblast = iblastObj.GetComponent<IblastManager>();
-            iblast.SetMoveVec(transform.localScale.x);
+            iblast.SetMoveVecX(transform.localScale.x);
             iblast.SetScaleX(transform.localScale.x);
         }
 

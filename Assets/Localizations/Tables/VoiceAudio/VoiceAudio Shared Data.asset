@@ -73,83 +73,33 @@ MonoBehaviour:
         m_Entries:
         - m_KeyId: 1077885222912
           m_TableCodes:
-          - en
-          - zh
-          - zh-TW
-          - ko
-          - id
           - ja
         - m_KeyId: 1081202917376
           m_TableCodes:
           - ja
-          - en
-          - zh
-          - zh-TW
-          - ko
-          - id
         - m_KeyId: 1085132980224
           m_TableCodes:
           - ja
-          - en
-          - zh
-          - ko
-          - zh-TW
-          - id
         - m_KeyId: 1089205649408
           m_TableCodes:
           - ja
-          - en
-          - zh
-          - zh-TW
-          - ko
-          - id
         - m_KeyId: 1092045193216
           m_TableCodes:
           - ja
-          - en
-          - zh
-          - zh-TW
-          - ko
-          - id
         - m_KeyId: 1094364643328
           m_TableCodes:
           - ja
-          - en
-          - zh
-          - zh-TW
-          - ko
-          - id
         - m_KeyId: 1096616984576
           m_TableCodes:
           - ja
-          - en
-          - zh
-          - zh-TW
-          - ko
-          - id
         - m_KeyId: 1098655416320
           m_TableCodes:
           - ja
-          - en
-          - zh
-          - zh-TW
-          - ko
-          - id
         - m_KeyId: 1101138444288
           m_TableCodes:
           - ja
-          - en
-          - zh
-          - zh-TW
-          - ko
-          - id
         - m_KeyId: 1102988132352
           m_TableCodes:
           - ja
-          - en
-          - zh
-          - zh-TW
-          - ko
-          - id
         m_TypeString: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null

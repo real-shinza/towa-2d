@@ -29,6 +29,66 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ja
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14e3dff31fdb9c84aa5389345d91d08f
+    m_Address: jp_start
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e11ebf789f502a043bd07313896d9deb
+    m_Address: jp_jump
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 42f3cab6baad35e4983dd94af35f6cc1
+    m_Address: jp_attack
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cebe1d5e1fb0e684a8a0dface16ec62f
+    m_Address: jp_jump_attack
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08e17ea430bb7654c898551287ed5fc4
+    m_Address: jp_strike
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 120eccd0d13b4184e81b8d221fdd6b97
+    m_Address: jp_block
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d069afe3011e0642bde32bdae97b016
+    m_Address: jp_crouch
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f5eceb50b617e74090b9b43a4185159
+    m_Address: jp_hurt
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55f23b5bc9b30554dbc36362bad184dd
+    m_Address: jp_win
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bec5f0115e64f7f46a49313aa892a48c
+    m_Address: jp_die
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 3bef73b6f75521a4b98662331ffe0734, type: 2}
   m_SchemaSet:
