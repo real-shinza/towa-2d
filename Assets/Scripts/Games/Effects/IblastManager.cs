@@ -16,12 +16,8 @@ namespace Towa.Effect
         private void OnTriggerEnter2D(Collider2D other)
         {
             var go = other.gameObject;
-            if (go.CompareTag("Player") ||
-                go.CompareTag("Block") ||
-                go.CompareTag("Tile"))
-            {
+            if (go.CompareTag("Tile"))
                 DestroyTrigger();
-            }
         }
 
         private void OnBecameInvisible()

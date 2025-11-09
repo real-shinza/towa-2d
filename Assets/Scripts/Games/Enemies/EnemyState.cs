@@ -7,5 +7,6 @@ namespace Towa.Enemy
         Attack,
         Strike,
         Die,
+        Finish,
     }
 }

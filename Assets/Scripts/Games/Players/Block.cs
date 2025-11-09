@@ -1,3 +1,4 @@
+using Towa.Effect;
 using Towa.UI.Game;
 using UnityEngine;
 
@@ -12,9 +13,14 @@ namespace Towa.Player
         {
             var go = other.gameObject;
             if (go.CompareTag("Iblast"))
+            {
+                go.GetComponent<IblastManager>().DestroyTrigger();
                 scoreManager.BlockIblast();
+            }
             else if (go.CompareTag("StrikingEnemy"))
+            {
                 scoreManager.BlockStrikingEnemy();
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+using Towa.Effect;
 using Towa.UI.Game;
 using UnityEngine;
 
@@ -45,6 +46,10 @@ namespace Towa.Player
             CheckDie();
             CheckGrounded();
             UpdateState();
+        }
+
+        private void FixedUpdate()
+        {
             UpdateMovement();
         }
 
@@ -52,9 +57,14 @@ namespace Towa.Player
         {
             var go = other.gameObject;
             if (go.CompareTag("Iblast"))
+            {
+                go.GetComponent<IblastManager>().DestroyTrigger();
                 ApplyDamage(attackDamage);
+            }
             else if (go.CompareTag("Campfire"))
+            {
                 isGoal = true;
+            }
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -67,6 +77,15 @@ namespace Towa.Player
                 ApplyDamage(enemyDamage);
             else if (go.CompareTag("StrikingEnemy"))
                 ApplyDamage(straikeDamage);
+        }
+
+        /// <summary>
+        /// 落下、タイムアップはHPを0にする
+        /// </summary>
+        private void CheckDie()
+        {
+            if (transform.position.y < -5.5f || timeManager.RemainTime <= 0.0f)
+                ApplyDamage(hp, true);
         }
 
         /// <summary>
@@ -90,7 +109,7 @@ namespace Towa.Player
         }
 
         /// <summary>
-        /// ステータス更新
+        /// 状態更新
         /// </summary>
         private void UpdateState()
         {
@@ -104,19 +123,23 @@ namespace Towa.Player
         }
 
         /// <summary>
-        /// ステータス変更
+        /// 状態変更
         /// </summary>
-        /// <param name="nextState">変更後のステータス</param>
+        /// <param name="nextState">変更後の状態</param>
         private void ChangeState(PlayerState nextState)
         {
-            if (state != nextState)
-            {
-                OnExit(state);
-                state = nextState;
-                OnEnter(state);
-            }
+            if (state == nextState)
+                return;
+
+            OnExit(state);
+            state = nextState;
+            OnEnter(state);
         }
 
+        /// <summary>
+        /// 次の状態を取得
+        /// </summary>
+        /// <returns>次の状態</returns>
         private PlayerState GetNextState()
         {
             // ゴール確認
@@ -231,15 +254,6 @@ namespace Towa.Player
         }
 
         /// <summary>
-        /// 落下、タイムアップはHPを0にする
-        /// </summary>
-        private void CheckDie()
-        {
-            if (transform.position.y < -5.5f || timeManager.RemainTime <= 0.0f)
-                ApplyDamage(hp, true);
-        }
-
-        /// <summary>
         /// 行動処理
         /// </summary>
         private void UpdateMovement()
@@ -261,10 +275,10 @@ namespace Towa.Player
                 moveVecX = (Mathf.Abs(moveX) >= 0.5f) ? Mathf.Sign(moveX) : 0f;
 
                 // 移動方向に身体を向ける
-                if (moveVecX < 0f)
-                    transform.localScale = new(-1f, 1f, 1f);
-                else
+                if (moveVecX >= 0f)
                     transform.localScale = new(1f, 1f, 1f);
+                else
+                    transform.localScale = new(-1f, 1f, 1f);
             }
             else if (state == PlayerState.Strike)
             {

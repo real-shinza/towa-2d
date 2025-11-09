@@ -17,7 +17,6 @@ namespace Towa.Player
         private readonly int isHurt = Animator.StringToHash("IsHurt");
         private readonly int winTrigger = Animator.StringToHash("WinTrigger");
         private readonly int dieTrigger = Animator.StringToHash("DieTrigger");
-        private readonly int speed = Animator.StringToHash("Speed");
 
 
         public void SetIsGround(bool value)
@@ -68,11 +67,6 @@ namespace Towa.Player
         public void DieTrigger()
         {
             animator.SetTrigger(dieTrigger);
-        }
-
-        public void Speed(float value)
-        {
-            animator.SetFloat(speed, value);
         }
     }
 }

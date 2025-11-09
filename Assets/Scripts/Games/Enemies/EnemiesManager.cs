@@ -4,7 +4,7 @@ namespace Towa.Enemy
 {
     public class EnemiesManager : MonoBehaviour
     {
-        private EnemyManagerOld[] enemyManagers;
+        private EnemyManager[] enemyManagers;
 
         void Start()
         {
@@ -14,14 +14,14 @@ namespace Towa.Enemy
         private void RegistChildren()
         {
             // 子オブジェクトを登録する
-            enemyManagers = gameObject.GetComponentsInChildren<EnemyManagerOld>();
+            enemyManagers = gameObject.GetComponentsInChildren<EnemyManager>();
         }
 
         public void FinishGame()
         {
             foreach (var enemyManager in enemyManagers)
             {
-                enemyManager.SetIsFinish(true);
+                enemyManager.FinishGame();
             }
         }
     }

@@ -14,8 +14,7 @@ GameObject:
   - component: {fileID: 5670466125442486644}
   - component: {fileID: 986427384026935648}
   - component: {fileID: 9151563564454028598}
-  - component: {fileID: 2917571920646555626}
-  - component: {fileID: 5199035347846838845}
+  - component: {fileID: 5878762403562382062}
   - component: {fileID: 2973158083696632019}
   m_Layer: 0
   m_Name: Enemy
@@ -209,7 +208,7 @@ CircleCollider2D:
   m_Offset: {x: 0.55, y: -0.55}
   serializedVersion: 2
   m_Radius: 0.6
---- !u!114 &2917571920646555626
+--- !u!114 &5878762403562382062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,13 +217,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5088693486869456499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c8234ef5d4f00f4d9516dc58778b286, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bd60485ea4aa094ea3d2519e16020ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 5199035347846838845}
   animator: {fileID: 2973158083696632019}
   rigidbody2d: {fileID: 5670466125442486644}
-  filter2d:
+  filterDown:
     useTriggers: 0
     useLayerMask: 0
     useDepth: 0
@@ -238,27 +236,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 70
     maxNormalAngle: 110
-  iblastPrefab: {fileID: 6555397554195370896, guid: f6acc0d687023974a967a8d18baefcaa, type: 3}
-  explosionPrefab: {fileID: 1525429099670381446, guid: ec9094048246c454a9b1a430d537da22, type: 3}
-  moveSpeed: 2.3
---- !u!114 &5199035347846838845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5088693486869456499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65cadaa0ba58fc2408cad4bf8529906e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
-  attackDistance: 8
-  strikeDistance: 4
-  minCoolTime: 0.5
-  maxCoolTime: 2
-  rigidbody2d: {fileID: 5670466125442486644}
   filterLeft:
     useTriggers: 0
     useLayerMask: 0
@@ -287,6 +264,15 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 170
     maxNormalAngle: 190
+  iblastPrefab: {fileID: 6555397554195370896, guid: f6acc0d687023974a967a8d18baefcaa, type: 3}
+  explosionPrefab: {fileID: 1525429099670381446, guid: ec9094048246c454a9b1a430d537da22, type: 3}
+  moveSpeed: 2.3
+  strikeSpeed: 3.5
+  playerTransform: {fileID: 0}
+  attackDistance: 8
+  strikeDistance: 4
+  minCoolTime: 0.5
+  maxCoolTime: 2
 --- !u!114 &2973158083696632019
 MonoBehaviour:
   m_ObjectHideFlags: 0
