@@ -16,7 +16,7 @@ namespace Towa.Player
 
         private void Awake()
         {
-            audioSource.volume = audioParam.Voice / 4;
+            audioSource.volume = audioParam.Voice / 5;
         }
 
         private void Update()

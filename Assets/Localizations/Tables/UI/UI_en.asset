@@ -19,27 +19,27 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 139803967488
-    m_Localized: Japanese
+    m_Localized: Voice
     m_Metadata:
       m_Items: []
   - m_Id: 187417706496
-    m_Localized: English
+    m_Localized: Japanese
     m_Metadata:
       m_Items: []
   - m_Id: 191008030720
-    m_Localized: Simplified Chinese
+    m_Localized: English
     m_Metadata:
       m_Items: []
   - m_Id: 193956626432
-    m_Localized: Traditional Chinese
+    m_Localized: Simplified Chinese
     m_Metadata:
       m_Items: []
   - m_Id: 197186240512
-    m_Localized: Korean
+    m_Localized: Traditional Chinese
     m_Metadata:
       m_Items: []
   - m_Id: 294624116736
-    m_Localized: Indonesian
+    m_Localized: Korean
     m_Metadata:
       m_Items: []
   - m_Id: 11056604200960
@@ -63,11 +63,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16924108341248
-    m_Localized: Music
+    m_Localized: BGM
     m_Metadata:
       m_Items: []
   - m_Id: 16928126484480
-    m_Localized: Voice
+    m_Localized: SE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108414948153171968
+    m_Localized: Indonesian
     m_Metadata:
       m_Items: []
   references:

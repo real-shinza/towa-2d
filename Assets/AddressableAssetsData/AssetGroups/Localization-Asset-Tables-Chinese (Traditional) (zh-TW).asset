@@ -22,12 +22,14 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-zh-TW
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ba0b939b8b36a56418815ff85ed3239c
     m_Address: TitleLogo_zh-TW
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-zh-TW
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 3bef73b6f75521a4b98662331ffe0734, type: 2}

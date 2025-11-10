@@ -36,34 +36,38 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16924108341248
-    m_Key: Settings/Music
+    m_Key: Settings/BGM
     m_Metadata:
       m_Items: []
   - m_Id: 16928126484480
-    m_Key: Settings/Voice
+    m_Key: Settings/SE
     m_Metadata:
       m_Items: []
   - m_Id: 139803967488
-    m_Key: Language/Japanese
+    m_Key: Settings/Voice
     m_Metadata:
       m_Items: []
   - m_Id: 187417706496
-    m_Key: Language/English
+    m_Key: Language/Japanese
     m_Metadata:
       m_Items: []
   - m_Id: 191008030720
-    m_Key: Language/Simplified Chinese
+    m_Key: Language/English
     m_Metadata:
       m_Items: []
   - m_Id: 193956626432
-    m_Key: Language/Traditional Chinese
+    m_Key: Language/Simplified Chinese
     m_Metadata:
       m_Items: []
   - m_Id: 197186240512
-    m_Key: Language/Korean
+    m_Key: Language/Traditional Chinese
     m_Metadata:
       m_Items: []
   - m_Id: 294624116736
+    m_Key: Language/Korean
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108414948153171968
     m_Key: Language/Indonesian
     m_Metadata:
       m_Items: []

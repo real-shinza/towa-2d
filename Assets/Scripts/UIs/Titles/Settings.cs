@@ -11,7 +11,9 @@ namespace Towa.Settings
         [SerializeField]
         private Dropdown languageDropdown;
         [SerializeField]
-        private Slider musicSlider;
+        private Slider bgmSlider;
+        [SerializeField]
+        private Slider seSlider;
         [SerializeField]
         private Slider voiceSlider;
         [SerializeField]
@@ -28,8 +30,13 @@ namespace Towa.Settings
 
         public void ChangedBgmSlider()
         {
-            audioParam.Bgm = musicSlider.value;
-            audioSource.volume = musicSlider.value / 4;
+            audioParam.Bgm = bgmSlider.value;
+            audioSource.volume = bgmSlider.value / 10;
+        }
+
+        public void ChangedSeSlider()
+        {
+            audioParam.Se = seSlider.value;
         }
 
         public void ChangedVoiceSlider()

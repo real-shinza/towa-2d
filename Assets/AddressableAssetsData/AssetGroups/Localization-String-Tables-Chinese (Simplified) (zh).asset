@@ -22,12 +22,14 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-zh
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 58de67f38df5b994c80776be2252458f
     m_Address: VoiceText_zh
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-zh
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 3bef73b6f75521a4b98662331ffe0734, type: 2}

@@ -19,27 +19,27 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 139803967488
-    m_Localized: Bahasa Jepang
+    m_Localized: Suara
     m_Metadata:
       m_Items: []
   - m_Id: 187417706496
-    m_Localized: Bahasa Inggris
+    m_Localized: Bahasa Jepang
     m_Metadata:
       m_Items: []
   - m_Id: 191008030720
-    m_Localized: Cina Disederhanakan
+    m_Localized: Bahasa Inggris
     m_Metadata:
       m_Items: []
   - m_Id: 193956626432
-    m_Localized: Cina Tradisional
+    m_Localized: Cina Disederhanakan
     m_Metadata:
       m_Items: []
   - m_Id: 197186240512
-    m_Localized: 'Bahasa Korea '
+    m_Localized: Cina Tradisional
     m_Metadata:
       m_Items: []
   - m_Id: 294624116736
-    m_Localized: Bahasa Indonesia
+    m_Localized: 'Bahasa Korea '
     m_Metadata:
       m_Items: []
   - m_Id: 11056604200960
@@ -67,7 +67,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16928126484480
-    m_Localized: Suara
+    m_Localized: Efek suara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108414948153171968
+    m_Localized: Bahasa Indonesia
     m_Metadata:
       m_Items: []
   references:
